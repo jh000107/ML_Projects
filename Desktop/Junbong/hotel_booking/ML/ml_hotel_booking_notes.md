@@ -190,3 +190,56 @@ We have to convert some data into integer or any other numerical format in order
 Categorical => feature encoding => numerical data
 
 We are going to perform mean encoding.
+
+
+
+## How to Handle Outliers
+
+Given a bunch of numbers, e.g. all the prices of the room in U.S Dollars.
+
+[50, 60, 65, 61, 97, ..., 1000, 3000, 10000] => 1000, 3000, 10000 High outliers. These are values that could distract our ML algorithms.
+
+In general, normally distributed or Gaussian distributed data is often good.
+
+Key thing here is a **log transformation.**
+
+### Log transformation
+
+Log transformation is a data transformation method in which it replaces each variable x with a log(x). In order to make this worth-doing, the original graph has to follow a log-normal distribution.
+
+
+
+## Select Important Features using Co-relation & Univariate Analysis
+
+### Univariate Analysis
+
+This is basically saying that for each variable, is it useful for our machine learning algorithm or not?
+
+Two distributions overlapped => not useful
+
+overlapped => useful
+
+**Co-relation** is used when we want to find how related two variables are.
+
+* High corelation value can lead to overfitting, wrong prediction
+  * 0.9, 0.95
+* less corelation can also lead to low accuracy when applied to our machine learning model.
+  * 0.01, 0.02
+* So it is good to ignore them => drop them
+
+
+
+## Applying techniqutes of feature importance
+
+In other words, how to find the important features for my model building
+
+Data: feature
+
+* independent: they are not dependent on any of the features
+* dependent: dependent on rest of the features
+
+As soon as we pass independent features to our algorithm, it will output the dependent or target features
+
+There could be some non necessary independent features in our data. The feature selection algorithm can be used to remove those.
+
+For example, let's say we have an algorithm called S1. We pass in independent and dependent feature to see what is really an important feature.
